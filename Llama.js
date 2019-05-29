@@ -4,13 +4,15 @@ var SideNavOpen = false;
 
 const Llama = ( function( ) {
     const paramsParse = function ( params ) {
-        let output = "";
-          let lenght = params.lenght;
+        let output = "", counter = 0;
+        
           for( let i in params ) {
             output += i + "=" + params[ i ];
-            if( i < lenght - 1 ) {
+
+            if( counter < Object.keys( params ).length - 1 ) {
                 output += "&";
             }
+            counter++;
           }
         return output;
     }
